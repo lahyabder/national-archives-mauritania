@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>البوابة الوطنية للأرشيف - الجمهورية الإسلامية الموريتانية</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="news.css">
+</head>
+<body>
+    <div class="utility-bar">
+        <div class="container utility-container">
+            <div class="utility-left">
+                <a href="#"><i class="fas fa-wheelchair"></i> إمكانية الوصول</a>
+                <a href="#"><i class="fas fa-adjust"></i> التباين</a>
+                <span class="text-size">
+                    حجم الخط: 
+                    <button class="size-btn">A-</button>
+                    <button class="size-btn active">A</button>
+                    <button class="size-btn">A+</button>
+                </span>
+            </div>
+            <div class="utility-right">
+                <a href="#">البيانات المفتوحة</a>
+                <a href="#">التشريعات</a>
+                <div class="lang-switch">
+                    <a href="index.html" class="active">العربية</a> | 
+                    <a href="index-fr.html">Français</a> | 
+                    <a href="index-en.html">English</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.jpg" alt="National Archives Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>المندوبية العامة للوثائق الوطنية</h1>
+                    <span class="brand-subtitle">الجمهورية الإسلامية الموريتانية</span>
+                </div>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="virtual-tour.html" class="nav-item" style="color: var(--c-gold); font-weight: bold;"><i class="fas fa-vr-cardboard"></i> جولة افتراضية</a></li>
+                <li><a href="collections.html" class="nav-item">استكشف السجلات</a></li>
+                <li><a href="researchers.html" class="nav-item">للباحثين</a></li>
+                <li><a href="agencies.html" class="nav-item">للجهات الحكومية</a></li>
+                <li><a href="cooperation.html" class="nav-item">التعاون الدولي</a></li>
+                <li><a href="about.html" class="nav-item">عن المؤسسة</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="dashboard.html" class="btn-outline-gold"><i class="fas fa-sign-in-alt"></i> البوابة الإدارية</a>
+                <button class="menu-toggle"><i class="fas fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <span class="hero-label fade-in">الذاكرة الوطنية الموريتانية</span>
+            <h1 class="fade-in delay-1">نصون الماضي،<br>ونلهم المستقبل.</h1>
+            <p class="fade-in delay-2">مرحباً بكم في الأرشيف الوطني الموريتاني. بوابة واحدة للوصول إلى أكثر من 3000 مجلد تاريخي وملايين الوثائق الإدارية المرقمنة.</p>
+            
+            <div class="search-omnibox fade-in delay-3">
+                <div class="search-tabs">
+                    <button class="search-tab active">جميع السجلات</button>
+                    <button class="search-tab">الصور والخرائط</button>
+                    <button class="search-tab">المخطوطات</button>
+                </div>
+                <form class="search-form" onsubmit="window.location.href='collections.html'; return false;">
+                    <div class="search-input-group">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="ابحث في الكتالوج الوطني (مثال: وثائق الاستقلال، اتفاقيات، مراسيم)...">
+                        <button type="submit" class="btn-search">بحث متقدم</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container portals-container fade-in delay-4">
+            <div class="portal-cards">
+                <a href="researchers.html" class="portal-card">
+                    <div class="portal-icon"><i class="fas fa-book-reader"></i></div>
+                    <h3>الباحثون والطلاب</h3>
+                    <p>الوصول إلى قاعة المطالعة الافتراضية وحجز المواعيد.</p>
+                    <span class="portal-link">دخول <i class="fas fa-arrow-left"></i></span>
+                </a>
+                <a href="agencies.html" class="portal-card">
+                    <div class="portal-icon"><i class="fas fa-university"></i></div>
+                    <h3>الإدارات الحكومية</h3>
+                    <p>نظام الدفع الإلكتروني والتحويل للأرشيف الوسيط.</p>
+                    <span class="portal-link">دخول <i class="fas fa-arrow-left"></i></span>
+                </a>
+                <a href="collections.html" class="portal-card">
+                    <div class="portal-icon"><i class="fas fa-image"></i></div>
+                    <h3>المعارض الرقمية</h3>
+                    <p>استكشف معارضنا المنسقة وتاريخ موريتانيا المصور.</p>
+                    <span class="portal-link">استكشف <i class="fas fa-arrow-left"></i></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- News & Updates Section -->
+    <section class="section bg-white">
+        <div class="container">
+            <div class="section-header center">
+                <span class="badge-institutional">المركز الإعلامي</span>
+                <h2 class="serif-title">آخر الأخبار والإصدارات</h2>
+                <div class="heading-line center"></div>
+            </div>
+
+            <div class="news-grid">
+                <!-- Featured News Article -->
+                <a href="news-algeria.html" class="news-card featured">
+                    <div class="news-image">
+                        <img src="assets/توقيع ابروتوكول.jpg" alt="توقيع بروتوكول تعاون">
+                        <span class="news-date"><i class="far fa-calendar-alt"></i> 19 فبراير 2024</span>
+                    </div>
+                    <div class="news-content">
+                        <span class="news-category">تعاون دولي</span>
+                        <h3>توقيع بروتوكول تعاون بين موريتانيا والجزائر لصيانة الأرشيف</h3>
+                        <p>وقعت موريتانيا والجزائر في نواكشوط بروتوكول تعاون في مجال الأرشيف لتعزيز التعاون بين البلدين في مجال حفظ وصيانة وتكوين الكوادر البشرية والرقمنة.</p>
+                        <span class="read-more">اقرأ التفاصيل <i class="fas fa-arrow-left"></i></span>
+                    </div>
+                </a>
+
+                <!-- Mock News Articles -->
+                <div class="side-news">
+                    <a href="#" class="news-card-small">
+                        <div class="news-content">
+                            <span class="news-date">10 أكتوبر 2026</span>
+                            <h4>إطلاق البوابة الإلكترونية الجديدة للمندوبية العامة للوثائق الوطنية</h4>
+                        </div>
+                    </a>
+                    <a href="#" class="news-card-small">
+                        <div class="news-content">
+                            <span class="news-date">01 أكتوبر 2026</span>
+                            <h4>رقمنة 50 ألف وثيقة جديدة من أرشيف فترة الاستقلال</h4>
+                        </div>
+                    </a>
+                    <a href="#" class="news-card-small">
+                        <div class="news-content">
+                            <span class="news-date">15 سبتمبر 2026</span>
+                            <h4>افتتاح معرض "موريتانيا في الخرائط" بقاعة المطالعة الكبرى</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer class="global-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="assets/logo.jpg" alt="Logo">
+                    <div>
+                        <h2>المندوبية العامة للوثائق الوطنية</h2>
+                        <p>الوزارة المكلفة بالأمانة العامة للحكومة<br>الجمهورية الإسلامية الموريتانية</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h4>الخدمات الإلكترونية</h4>
+                        <ul>
+                            <li><a href="collections.html">البحث في الفهرس</a></li>
+                            <li><a href="researchers.html">حجز موعد قاعة المطالعة</a></li>
+                            <li><a href="agencies.html">نظام الإيداع الحكومي</a></li>
+                            <li><a href="dashboard.html">بوابة الموظفين</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h4>مواقع هامة</h4>
+                        <ul>
+                            <li><a href="cooperation.html" class="nav-item">التعاون الدولي</a></li>
+                <li><a href="about.html">تاريخ المندوبية</a></li>
+                            <li><a href="#">المرسوم 22.070</a></li>
+                            <li><a href="#">البيانات المفتوحة</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group contact-group">
+                        <h4>تواصل معنا</h4>
+                        <p><i class="fas fa-building"></i> شارع الاستقلال، نواكشوط</p>
+                        <p><i class="fas fa-phone"></i> +222 45 00 00 00</p>
+                        <p><i class="fas fa-envelope"></i> contact@archives.mr</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 المندوبية العامة للوثائق الوطنية، الجمهورية الإسلامية الموريتانية. جميع الحقوق محفوظة.</p>
+                <div class="mauritanian-strip"></div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+    <!-- Floating Back Button -->
+    <a href='javascript:history.back()' class='floating-back-btn' title='عودة / Back'>
+        <i class='fas fa-arrow-right rtl-arrow'></i>
+    </a>
+
+</body>
+</html>

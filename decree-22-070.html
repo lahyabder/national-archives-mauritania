@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المرسوم 22.070 - الأرشيف الوطني</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: var(--c-parchment); }
+        .document-container { max-width: 800px; margin: 50px auto; background: white; padding: 60px; border-radius: 8px; box-shadow: var(--shadow-float); font-family: var(--f-sans); line-height: 2; border: 1px solid var(--c-border); }
+        .document-header { text-align: center; margin-bottom: 40px; border-bottom: 2px solid var(--c-gold); padding-bottom: 20px; }
+        .document-header h2 { font-family: var(--f-serif); color: var(--c-green-dark); font-size: 2.5rem; }
+        .document-content p { margin-bottom: 15px; font-size: 1.1rem; text-align: justify; }
+        .document-content h3 { color: var(--c-green-dark); font-family: var(--f-ui); margin: 30px 0 15px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.jpg" alt="Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>المندوبية العامة للوثائق الوطنية</h1>
+                    <span class="brand-subtitle">الجمهورية الإسلامية الموريتانية</span>
+                </div>
+            </a>
+            <div class="nav-actions">
+                <a href="agencies.html" class="btn-outline-gold"><i class="fas fa-arrow-right"></i> العودة</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="document-container">
+            <div class="document-header">
+                <h2>المرسوم 22.070</h2>
+                <p>المنظم لعملية الدفع الإلزامي للأرشيف الإداري</p>
+            </div>
+            
+            <div class="document-content">
+                <h3>المادة 1</h3>
+                <p>يُلزم هذا المرسوم جميع الوزارات والمؤسسات العمومية والجهات الإدارية التابعة للدولة بتحويل أرشيفها الوسيط والتاريخي إلى المندوبية العامة للوثائق الوطنية فور انقضاء مدة حفظه الجاري في الإدارات المعنية.</p>
+                
+                <h3>المادة 2</h3>
+                <p>يُمنع منعاً باتاً إتلاف أي وثيقة إدارية مهما كانت طبيعتها إلا بناءً على جدول فرز مصادق عليه رسمياً من طرف لجان الفرز التابعة للمندوبية العامة للوثائق الوطنية.</p>
+                
+                <h3>المادة 3</h3>
+                <p>يتم تحويل الأرشيف عبر إجراءات رسمية تتضمن تقديم استمارة طلب إيداع، مرفقة بجدول جرد مفصل للعلب والمستندات المحولة، على أن يتم النقل تحت إشراف لجنة مشتركة.</p>
+                
+                <div style="text-align: center; margin-top: 50px;">
+                    <button class="btn-outline-gold" onclick="window.print()"><i class="fas fa-download"></i> تحميل كملف PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Back Button -->
+    <a href='javascript:history.back()' class='floating-back-btn' title='عودة / Back'>
+        <i class='fas fa-arrow-right rtl-arrow'></i>
+    </a>
+
+</body>
+</html>

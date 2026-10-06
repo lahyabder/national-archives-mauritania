@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>متابعة طلبات الإيداع - منصة الجهات الحكومية</title>
+    <!-- Google Fonts for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        .topbar { background: #004523; color: white; }
+        .search-bar { display: none; }
+        .sidebar { background: #fdfcf8; }
+        .sidebar-menu a { color: #2c3e50; }
+        .sidebar-menu li.active a, .sidebar-menu a:hover { background-color: rgba(200, 155, 69, 0.2); color: #004523; }
+        
+        .tracking-timeline { padding: 20px; background: white; border-radius: 8px; box-shadow: var(--shadow-sm); margin-bottom: 30px; }
+        .timeline-step { display: flex; align-items: center; margin-bottom: 20px; }
+        .step-icon { width: 40px; height: 40px; border-radius: 50%; background: #e2e8f0; color: #64748b; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; margin-left: 15px; flex-shrink: 0; }
+        .step-content { border-right: 2px solid #e2e8f0; padding-right: 20px; padding-bottom: 20px; }
+        .timeline-step:last-child .step-content { border-right: none; padding-bottom: 0; }
+        
+        .step-completed .step-icon { background: #10b981; color: white; }
+        .step-completed .step-content { border-color: #10b981; }
+        .step-active .step-icon { background: #3b82f6; color: white; box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2); }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/logo.jpg" alt="شعار المندوبية" class="sidebar-logo">
+                <h2 style="font-size: 1rem;">نظام الإيداع الحكومي</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="deposit-portal.html"><i class="fas fa-home"></i> <span>الرئيسية (لوحة الجهة)</span></a></li>
+                <li><a href="transfer-form.html"><i class="fas fa-paper-plane"></i> <span>تقديم طلب إيداع جديد</span></a></li>
+                <li class="active"><a href="deposit-tracking.html"><i class="fas fa-history"></i> <span>متابعة طلبات الإيداع</span></a></li>
+                <li><a href="deposit-archive.html"><i class="fas fa-box-open"></i> <span>أرشيفنا لدى المندوبية</span></a></li>
+                <li><a href="sorting-table.html"><i class="fas fa-file-pdf"></i> <span>اللوائح والتشريعات</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="agencies.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> <span>تسجيل الخروج</span></a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="topbar">
+                <div style="font-weight: bold; font-family: 'Tajawal', sans-serif;">
+                    <i class="fas fa-history" style="color: #FFC000; margin-left: 10px;"></i> متابعة الطلبات النشطة
+                </div>
+                <div class="topbar-actions">
+                    <div class="notification-icon"><i class="fas fa-bell"></i><span class="badge">1</span></div>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=وزارة+التعليم&background=FFC000&color=006233" alt="User">
+                        <span>مدير الأرشيف بالوزارة</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-wrapper">
+                <h2 style="margin-bottom: 20px; color: #004523;">تفاصيل تتبع الطلب الحالي (رقم: #TR-26-004)</h2>
+                
+                <div class="tracking-timeline">
+                    <div class="timeline-step step-completed">
+                        <div class="step-icon"><i class="fas fa-check"></i></div>
+                        <div class="step-content">
+                            <h4 style="color: #10b981;">تم استلام الطلب إلكترونياً</h4>
+                            <p style="color: #64748b; font-size: 0.9rem;">05 أكتوبر 2026 - 09:30 صباحاً</p>
+                            <p>قامت الوزارة برفع الاستمارة وجداول الفرز المرفقة بنجاح على النظام.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-step step-active">
+                        <div class="step-icon"><i class="fas fa-search"></i></div>
+                        <div class="step-content">
+                            <h4 style="color: #3b82f6;">مراجعة لجان الفرز (قيد التنفيذ)</h4>
+                            <p style="color: #64748b; font-size: 0.9rem;">06 أكتوبر 2026 - قيد الإجراء</p>
+                            <p>تقوم لجان المندوبية بمراجعة الجداول لمطابقتها مع المعايير القانونية (المرسوم 22.070).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="fas fa-truck"></i></div>
+                        <div class="step-content">
+                            <h4 style="color: #64748b;">تحديد موعد النقل الميداني</h4>
+                            <p style="color: #94a3b8; font-size: 0.9rem;">في الانتظار</p>
+                            <p>سيتم جدولة موعد لإرسال شاحنات النقل الخاصة بالمندوبية لنقل العلب (عدد 120 علبة).</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-step">
+                        <div class="step-icon"><i class="fas fa-file-signature"></i></div>
+                        <div class="step-content">
+                            <h4 style="color: #64748b;">إصدار محضر الاستلام النهائي</h4>
+                            <p style="color: #94a3b8; font-size: 0.9rem;">في الانتظار</p>
+                            <p>توقيع المحاضر المشتركة وإخلاء طرف الوزارة من العهدة.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card table-card">
+                    <div class="card-header">
+                        <h3>أرشيف الطلبات السابقة</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>رقم الطلب</th>
+                                    <th>تاريخ التقديم</th>
+                                    <th>الكمية</th>
+                                    <th>الحالة</th>
+                                    <th>المحضر الرسمي</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#TR-26-003</td>
+                                    <td>12 مايو 2026</td>
+                                    <td>50 علبة</td>
+                                    <td><span class="status status-archived">مكتمل</span></td>
+                                    <td><a href="#" style="color: #3b82f6;"><i class="fas fa-download"></i> تحميل المحضر (PDF)</a></td>
+                                </tr>
+                                <tr>
+                                    <td>#TR-25-019</td>
+                                    <td>20 نوفمبر 2025</td>
+                                    <td>300 علبة</td>
+                                    <td><span class="status status-archived">مكتمل</span></td>
+                                    <td><a href="#" style="color: #3b82f6;"><i class="fas fa-download"></i> تحميل المحضر (PDF)</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Floating Back Button -->
+    <a href='javascript:history.back()' class='floating-back-btn' title='عودة / Back'>
+        <i class='fas fa-arrow-right rtl-arrow'></i>
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أرشيفنا لدى المندوبية - منصة الجهات الحكومية</title>
+    <!-- Google Fonts for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        .topbar { background: #004523; color: white; }
+        .search-bar { display: flex; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); }
+        .search-bar input { color: white; }
+        .search-bar input::placeholder { color: rgba(255,255,255,0.7); }
+        .sidebar { background: #fdfcf8; }
+        .sidebar-menu a { color: #2c3e50; }
+        .sidebar-menu li.active a, .sidebar-menu a:hover { background-color: rgba(200, 155, 69, 0.2); color: #004523; }
+        
+        .archive-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+        .box-card { background: white; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; position: relative; border-top: 4px solid #FFC000; box-shadow: var(--shadow-sm); transition: 0.3s ease;}
+        .box-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+        .box-icon { font-size: 2.5rem; color: #cbd5e1; position: absolute; left: 20px; top: 20px; opacity: 0.3; }
+        .box-title { font-family: 'Tajawal', sans-serif; font-size: 1.1rem; color: #004523; font-weight: bold; margin-bottom: 10px; }
+        .box-meta { display: flex; flex-direction: column; gap: 5px; color: #64748b; font-size: 0.9rem; }
+        .btn-small { padding: 5px 10px; font-size: 0.8rem; border-radius: 4px; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; }
+        .btn-request { background: #eff6ff; color: #3b82f6; }
+        .btn-request:hover { background: #3b82f6; color: white; }
+        .btn-preview { background: #f1f5f9; color: #475569; }
+        .btn-preview:hover { background: #475569; color: white; }
+        
+        /* Modal Styles */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: none; justify-content: center; align-items: center; z-index: 1000; opacity: 0; transition: opacity 0.3s; }
+        .modal-overlay.active { display: flex; opacity: 1; }
+        .modal-content { background: white; padding: 30px; border-radius: 8px; width: 90%; max-width: 500px; box-shadow: var(--shadow-float); position: relative; transform: translateY(-20px); transition: transform 0.3s; }
+        .modal-overlay.active .modal-content { transform: translateY(0); }
+        .modal-close { position: absolute; top: 15px; left: 15px; background: none; border: none; font-size: 1.2rem; cursor: pointer; color: #94a3b8; }
+        .modal-header { margin-bottom: 20px; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; }
+        .modal-header h3 { color: #004523; font-family: 'Tajawal', sans-serif; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; color: #475569; font-size: 0.9rem; }
+        .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-family: inherit; }
+        .file-list { list-style: none; padding: 0; margin: 0; }
+        .file-list li { padding: 10px; border-bottom: 1px solid #f1f5f9; display: flex; justify-content: space-between; align-items: center; }
+        .file-list li:last-child { border-bottom: none; }
+        .file-status { font-size: 0.8rem; background: #dcfce7; color: #166534; padding: 2px 6px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/logo.jpg" alt="شعار المندوبية" class="sidebar-logo">
+                <h2 style="font-size: 1rem;">نظام الإيداع الحكومي</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="deposit-portal.html"><i class="fas fa-home"></i> <span>الرئيسية (لوحة الجهة)</span></a></li>
+                <li><a href="transfer-form.html"><i class="fas fa-paper-plane"></i> <span>تقديم طلب إيداع جديد</span></a></li>
+                <li><a href="deposit-tracking.html"><i class="fas fa-history"></i> <span>متابعة طلبات الإيداع</span></a></li>
+                <li class="active"><a href="deposit-archive.html"><i class="fas fa-box-open"></i> <span>أرشيفنا لدى المندوبية</span></a></li>
+                <li><a href="sorting-table.html"><i class="fas fa-file-pdf"></i> <span>اللوائح والتشريعات</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="agencies.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> <span>تسجيل الخروج</span></a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="topbar">
+                <div style="font-weight: bold; font-family: 'Tajawal', sans-serif;">
+                    <i class="fas fa-box-open" style="color: #FFC000; margin-left: 10px;"></i> الفهرس العام لأرشيف الوزارة
+                </div>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="ابحث برقم العلبة أو محتوى الملف...">
+                </div>
+                <div class="topbar-actions">
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=وزارة+التعليم&background=FFC000&color=006233" alt="User">
+                        <span>مدير الأرشيف بالوزارة</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="dashboard-wrapper">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2 style="color: #004523;">العلب المحفوظة في مستودعات المندوبية</h2>
+                    <button class="btn-primary" style="background: #004523;"><i class="fas fa-download"></i> تصدير الفهرس (Excel)</button>
+                </div>
+
+                <div class="archive-grid">
+                    <div class="box-card">
+                        <i class="fas fa-archive box-icon"></i>
+                        <div class="box-title">علبة رقم: BOX-2025-001</div>
+                        <div class="box-meta">
+                            <span><i class="fas fa-folder"></i> المحتوى: ملفات منح دراسية خارجية</span>
+                            <span><i class="far fa-calendar-alt"></i> الفترة: 2010 - 2012</span>
+                            <span><i class="fas fa-map-marker-alt"></i> الموقع: المستودع ب - الرف 4</span>
+                        </div>
+                        <div class="box-actions" style="margin-top: 15px; display: flex; gap: 10px;">
+                            <button class="btn-small btn-preview" onclick="openModal('previewModal')"><i class="fas fa-eye"></i> معاينة</button>
+                            <button class="btn-small btn-request" onclick="openModal('requestModal')"><i class="fas fa-share"></i> استعارة إدارية</button>
+                        </div>
+                    </div>
+
+                    <div class="box-card">
+                        <i class="fas fa-archive box-icon"></i>
+                        <div class="box-title">علبة رقم: BOX-2025-002</div>
+                        <div class="box-meta">
+                            <span><i class="fas fa-folder"></i> المحتوى: قرارات وتعيينات</span>
+                            <span><i class="far fa-calendar-alt"></i> الفترة: 2011</span>
+                            <span><i class="fas fa-map-marker-alt"></i> الموقع: المستودع ب - الرف 4</span>
+                        </div>
+                        <div class="box-actions" style="margin-top: 15px; display: flex; gap: 10px;">
+                            <button class="btn-small btn-preview" onclick="openModal('previewModal')"><i class="fas fa-eye"></i> معاينة</button>
+                            <button class="btn-small btn-request" onclick="openModal('requestModal')"><i class="fas fa-share"></i> استعارة إدارية</button>
+                        </div>
+                    </div>
+
+                    <div class="box-card">
+                        <i class="fas fa-archive box-icon"></i>
+                        <div class="box-title">علبة رقم: BOX-2025-003</div>
+                        <div class="box-meta">
+                            <span><i class="fas fa-folder"></i> المحتوى: تقارير المفتشية العامة</span>
+                            <span><i class="far fa-calendar-alt"></i> الفترة: 2008 - 2009</span>
+                            <span><i class="fas fa-map-marker-alt"></i> الموقع: المستودع ب - الرف 5</span>
+                        </div>
+                        <div class="box-actions" style="margin-top: 15px; display: flex; gap: 10px;">
+                            <button class="btn-small btn-preview" onclick="openModal('previewModal')"><i class="fas fa-eye"></i> معاينة</button>
+                            <button class="btn-small btn-request" onclick="openModal('requestModal')"><i class="fas fa-share"></i> استعارة إدارية</button>
+                        </div>
+                    </div>
+                    
+                    <div class="box-card">
+                        <i class="fas fa-archive box-icon"></i>
+                        <div class="box-title">علبة رقم: BOX-2026-001</div>
+                        <div class="box-meta">
+                            <span><i class="fas fa-folder"></i> المحتوى: ميزانية تسيير الجامعات</span>
+                            <span><i class="far fa-calendar-alt"></i> الفترة: 2015</span>
+                            <span><i class="fas fa-map-marker-alt"></i> الموقع: المستودع ج - الرف 1</span>
+                        </div>
+                        <div class="box-actions">
+                            <button class="btn-small btn-request"><i class="fas fa-share"></i> طلب استعارة إدارية</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Preview Modal -->
+    <div class="modal-overlay" id="previewModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('previewModal')"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h3><i class="fas fa-list"></i> محتويات العلبة</h3>
+                <p style="color: #64748b; font-size: 0.9rem;">فهرس الملفات المحفوظة داخل العلبة</p>
+            </div>
+            <ul class="file-list">
+                <li>
+                    <span>1. قرار وزاري رقم 45/2011</span> 
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <span class="file-status">متاح</span>
+                        <a href="sample.pdf" target="_blank" style="color: #3b82f6; font-size: 0.9rem; text-decoration: none; padding: 3px 8px; background: #eff6ff; border-radius: 4px;"><i class="fas fa-file-pdf"></i> عرض</a>
+                    </div>
+                </li>
+                <li>
+                    <span>2. تعميم بشأن المنح الدراسية</span> 
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <span class="file-status">متاح</span>
+                        <a href="sample.pdf" target="_blank" style="color: #3b82f6; font-size: 0.9rem; text-decoration: none; padding: 3px 8px; background: #eff6ff; border-radius: 4px;"><i class="fas fa-file-pdf"></i> عرض</a>
+                    </div>
+                </li>
+                <li>
+                    <span>3. محضر اجتماع اللجنة الفنية</span> 
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <span class="file-status">متاح</span>
+                        <a href="sample.pdf" target="_blank" style="color: #3b82f6; font-size: 0.9rem; text-decoration: none; padding: 3px 8px; background: #eff6ff; border-radius: 4px;"><i class="fas fa-file-pdf"></i> عرض</a>
+                    </div>
+                </li>
+                <li>
+                    <span>4. مراسلات خارجية واردة</span> 
+                    <div style="display:flex; gap:10px; align-items:center;">
+                        <span class="file-status">متاح</span>
+                        <a href="sample.pdf" target="_blank" style="color: #3b82f6; font-size: 0.9rem; text-decoration: none; padding: 3px 8px; background: #eff6ff; border-radius: 4px;"><i class="fas fa-file-pdf"></i> عرض</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Request Modal -->
+    <div class="modal-overlay" id="requestModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('requestModal')"><i class="fas fa-times"></i></button>
+            <div class="modal-header">
+                <h3><i class="fas fa-share"></i> طلب استعارة إدارية</h3>
+                <p style="color: #64748b; font-size: 0.9rem;">نموذج طلب استعارة مؤقتة من مستودعات الأرشيف</p>
+            </div>
+            <form onsubmit="event.preventDefault(); alert('تم إرسال الطلب بنجاح للمندوبية!'); closeModal('requestModal');">
+                <div class="form-group">
+                    <label>السبب الإداري للاستعارة</label>
+                    <textarea rows="3" placeholder="يرجى توضيح دافع الاستعارة..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label>المدة المطلوبة</label>
+                    <select style="width: 100%; padding: 10px; border: 1px solid #cbd5e1; border-radius: 4px; font-family: inherit;">
+                        <option>24 ساعة</option>
+                        <option>48 ساعة</option>
+                        <option>أسبوع عمل</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; background: #004523;"><i class="fas fa-paper-plane"></i> إرسال الطلب</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+        }
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+        }
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+
+    <!-- Floating Back Button -->
+    <a href='javascript:history.back()' class='floating-back-btn' title='عودة / Back'>
+        <i class='fas fa-arrow-right rtl-arrow'></i>
+    </a>
+
+</body>
+</html>

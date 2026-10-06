@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تفاصيل السجل - الأرشيف الوطني</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .record-header { background: var(--c-green-dark); color: white; padding: 120px 0 60px; }
+        .record-breadcrumb { font-family: var(--f-ui); color: var(--c-gold); margin-bottom: 20px; font-size: 0.9rem; }
+        .record-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+        .record-breadcrumb a:hover { color: var(--c-gold); }
+        .record-title { font-family: var(--f-serif); font-size: 3rem; margin-bottom: 15px; color: white; line-height: 1.3; }
+        
+        .record-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; margin-top: 50px; margin-bottom: 50px; }
+        .record-viewer { background: white; padding: 20px; border-radius: 8px; box-shadow: var(--shadow-subtle); border: 1px solid var(--c-border); text-align: center; }
+        .viewer-image { max-width: 100%; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .viewer-controls { display: flex; justify-content: center; gap: 15px; margin-top: 20px; }
+        
+        .record-metadata { background: var(--c-parchment); padding: 30px; border-radius: 8px; border: 1px solid var(--c-gold); }
+        .meta-list { list-style: none; padding: 0; margin: 0; }
+        .meta-list li { margin-bottom: 15px; border-bottom: 1px dashed var(--c-border); padding-bottom: 15px; display: flex; flex-direction: column; }
+        .meta-label { font-family: var(--f-ui); color: var(--c-text-light); font-size: 0.9rem; margin-bottom: 5px; }
+        .meta-value { color: var(--c-green-dark); font-weight: bold; font-family: var(--f-sans); }
+        
+        .record-description { margin-top: 30px; line-height: 2; font-size: 1.1rem; color: var(--c-text-main); }
+        
+        @media (max-width: 992px) {
+            .record-layout { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.jpg" alt="Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>المندوبية العامة للوثائق الوطنية</h1>
+                    <span class="brand-subtitle">الجمهورية الإسلامية الموريتانية</span>
+                </div>
+            </a>
+            <div class="nav-actions">
+                <a href="collections.html" class="btn-outline-gold"><i class="fas fa-arrow-right"></i> العودة للمجموعات</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="record-header">
+        <div class="container">
+            <div class="record-breadcrumb">
+                <a href="index.html">الرئيسية</a> &gt; <a href="collections.html">استكشف السجلات</a> &gt; مخطوطات
+            </div>
+            <h1 class="record-title">مجموعة فتاوى علماء شنقيط</h1>
+            <p style="font-size: 1.2rem; opacity: 0.9;">مجموعة نادرة من الفتاوى والمراسلات الفقهية تعود للقرن الثامن عشر الميلادي.</p>
+        </div>
+    </header>
+
+    <section class="container record-layout">
+        <div class="record-main">
+            <div class="record-viewer">
+                <!-- Fallback to a nice texture since we don't have the real manuscript image -->
+                <img src="assets/manuscript.jpg" onerror="this.src='https://images.unsplash.com/photo-1594122230689-45899d9e6f69?q=80&w=2000&auto=format&fit=crop'" alt="صورة المخطوطة" class="viewer-image">
+                <div class="viewer-controls">
+                    <button class="btn-primary" style="background: var(--c-green-dark);"><i class="fas fa-search-plus"></i> تكبير الصورة</button>
+                    <button class="btn-outline-gold"><i class="fas fa-download"></i> تحميل نسخة (PDF)</button>
+                </div>
+            </div>
+            
+            <div class="record-description">
+                <h3 style="color: var(--c-green-dark); font-family: var(--f-serif); margin-bottom: 15px; font-size: 1.8rem;">الوصف التاريخي</h3>
+                <p>تمثل هذه المجموعة واحدة من أهم الوثائق التاريخية التي تعكس الحياة العلمية والاجتماعية في بلاد شنقيط خلال القرن الثامن عشر. تتناول الفتاوى قضايا فقهية تتعلق بالمعاملات التجارية، النزاعات حول الأراضي، والفصل في المسائل المتعلقة بالزراعة والرعي في الواحات.</p>
+                <p>تم ترميم هذه المخطوطة بعناية فائقة في مختبرات المندوبية العامة للوثائق الوطنية في عام 2024 لضمان حفظها للأجيال القادمة، وتتاح الآن للباحثين والمهتمين بالدراسات التاريخية والفقهية.</p>
+            </div>
+        </div>
+        
+        <aside class="record-sidebar">
+            <div class="record-metadata">
+                <h3 style="color: var(--c-green-dark); font-family: var(--f-ui); margin-bottom: 20px; font-size: 1.4rem; border-bottom: 2px solid var(--c-gold); padding-bottom: 10px;"><i class="fas fa-info-circle"></i> البطاقة الوصفية</h3>
+                <ul class="meta-list">
+                    <li>
+                        <span class="meta-label">الرقم المرجعي (الكود الأرشيفي)</span>
+                        <span class="meta-value">MS-1750-CHQ-042</span>
+                    </li>
+                    <li>
+                        <span class="meta-label">التصنيف</span>
+                        <span class="meta-value">مخطوطات - فقه النوازل</span>
+                    </li>
+                    <li>
+                        <span class="meta-label">تاريخ الوثيقة المتوقع</span>
+                        <span class="meta-value">حوالي 1750 م (1163 هـ)</span>
+                    </li>
+                    <li>
+                        <span class="meta-label">لغة الوثيقة</span>
+                        <span class="meta-value">اللغة العربية (الخط الموريتاني المحظري)</span>
+                    </li>
+                    <li>
+                        <span class="meta-label">المصدر / المودع</span>
+                        <span class="meta-value">مكتبة أهل حبت التاريخية - شنقيط</span>
+                    </li>
+                    <li>
+                        <span class="meta-label">حالة الحفظ</span>
+                        <span class="meta-value" style="color: #10b981;">مرممة جزئياً ومتاحة للعرض</span>
+                    </li>
+                </ul>
+                <div style="margin-top: 30px; text-align: center;">
+                    <a href="researchers.html" class="btn-outline-gold" style="width: 100%; display: block;"><i class="fas fa-book-reader"></i> طلب معاينة الأصل في القاعة</a>
+                </div>
+            </div>
+        </aside>
+    </section>
+
+    <!-- Floating Back Button -->
+    <a href="javascript:history.back()" class="floating-back-btn" title="عودة / Back">
+        <i class="fas fa-arrow-right rtl-arrow"></i>
+    </a>
+</body>
+</html>

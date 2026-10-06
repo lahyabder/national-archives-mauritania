@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portail National des Archives - Mauritanie</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .serif-title, .hero h1, .brand-text h1 { font-family: 'Playfair Display', serif; }
+        .brand-text h1 { font-size: 1.2rem; }
+        .nav-links { gap: 1.5rem; }
+        .search-input-group input { text-align: left; padding-left: 15px; }
+        .search-icon { padding-right: 0; padding-left: 15px; }
+    </style>
+</head>
+<body>
+    <div class="utility-bar">
+        <div class="container utility-container">
+            <div class="utility-left">
+                <a href="#"><i class="fas fa-wheelchair"></i> Accessibilité</a>
+                <a href="#"><i class="fas fa-adjust"></i> Contraste</a>
+            </div>
+            <div class="utility-right">
+                <a href="#">Données Ouvertes</a>
+                <div class="lang-switch">
+                    <a href="index.html">العربية</a> | 
+                    <a href="index-fr.html" class="active">Français</a> | 
+                    <a href="index-en.html">English</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index-fr.html" class="brand">
+                <img src="assets/logo.jpg" alt="Logo Archives" class="brand-logo">
+                <div class="brand-text">
+                    <h1>Délégation Générale aux Documents Nationaux</h1>
+                    <span class="brand-subtitle">République Islamique de Mauritanie</span>
+                </div>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="virtual-tour.html" class="nav-item" style="color: var(--c-gold); font-weight: bold;"><i class="fas fa-vr-cardboard"></i> جولة افتراضية</a></li>
+                <li><a href="#" class="nav-item">Découvrir</a></li>
+                <li><a href="#" class="nav-item">Chercheurs</a></li>
+                <li><a href="#" class="nav-item">Agences</a></li>
+                <li><a href="#" class="nav-item">À propos</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="dashboard.html" class="btn-outline-gold"><i class="fas fa-sign-in-alt"></i> Portail Admin</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <span class="hero-label fade-in">La Mémoire Nationale Mauritanienne</span>
+            <h1 class="fade-in delay-1">Préserver le Passé,<br>Inspirer l'Avenir.</h1>
+            <p class="fade-in delay-2">Bienvenue aux Archives Nationales. Un portail unique pour accéder à plus de 3000 volumes historiques et des millions de documents numérisés.</p>
+            
+            <div class="search-omnibox fade-in delay-3">
+                <div class="search-tabs">
+                    <button class="search-tab active">Tous les registres</button>
+                    <button class="search-tab">Photos & Cartes</button>
+                    <button class="search-tab">Manuscrits</button>
+                </div>
+                <form class="search-form">
+                    <div class="search-input-group">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="Rechercher dans le catalogue (ex: Indépendance, décrets)...">
+                        <button type="submit" class="btn-search">Recherche</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="container portals-container fade-in delay-4">
+            <div class="portal-cards">
+                <a href="#" class="portal-card">
+                    <div class="portal-icon"><i class="fas fa-book-reader"></i></div>
+                    <h3>Chercheurs & Étudiants</h3>
+                    <p>Accès à la salle de lecture virtuelle et réservation.</p>
+                    <span class="portal-link">Entrer <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="#" class="portal-card">
+                    <div class="portal-icon"><i class="fas fa-university"></i></div>
+                    <h3>Administrations</h3>
+                    <p>Système de dépôt électronique et d'archivage.</p>
+                    <span class="portal-link">Entrer <i class="fas fa-arrow-right"></i></span>
+                </a>
+                <a href="#" class="portal-card">
+                    <div class="portal-icon"><i class="fas fa-image"></i></div>
+                    <h3>Expositions Numériques</h3>
+                    <p>Explorez l'histoire de la Mauritanie en images.</p>
+                    <span class="portal-link">Explorer <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Floating Back Button -->
+    <a href='javascript:history.back()' class='floating-back-btn' title='عودة / Back'>
+        <i class='fas fa-arrow-right rtl-arrow'></i>
+    </a>
+
+</body>
+</html>

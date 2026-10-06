@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بوابة الإيداع الإلكتروني - منصة الجهات الحكومية</title>
+    <!-- Google Fonts for Arabic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <style>
+        .topbar { background: #004523; color: white; }
+        .search-bar { display: none; }
+        .sidebar { background: #fdfcf8; }
+        .sidebar-menu a { color: #2c3e50; }
+        .sidebar-menu li.active a, .sidebar-menu a:hover { background-color: rgba(200, 155, 69, 0.2); color: #004523; }
+        .welcome-banner { background: white; color: #1e293b; border-left: 5px solid #FFC000; padding: 2rem; box-shadow: var(--shadow-sm); }
+        .welcome-text h1 { color: #006233; font-family: 'Tajawal', sans-serif; }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar specifically for Agency (Not Global Admin) -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="assets/logo.jpg" alt="شعار المندوبية" class="sidebar-logo">
+                <h2 style="font-size: 1rem;">نظام الإيداع الحكومي</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="deposit-portal.html"><i class="fas fa-home"></i> <span>الرئيسية (لوحة الجهة)</span></a></li>
+                <li><a href="transfer-form.html"><i class="fas fa-paper-plane"></i> <span>تقديم طلب إيداع جديد</span></a></li>
+                <li><a href="deposit-tracking.html"><i class="fas fa-history"></i> <span>متابعة طلبات الإيداع</span></a></li>
+                <li><a href="deposit-archive.html"><i class="fas fa-box-open"></i> <span>أرشيفنا لدى المندوبية</span></a></li>
+                <li><a href="sorting-table.html"><i class="fas fa-file-pdf"></i> <span>اللوائح والتشريعات</span></a></li>
+            </ul>
+            <div class="sidebar-footer">
+                <a href="agencies.html" class="logout-btn"><i class="fas fa-sign-out-alt"></i> <span>تسجيل الخروج</span></a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="topbar">
+                <div style="font-weight: bold; font-family: 'Tajawal', sans-serif;">
+                    <i class="fas fa-university" style="color: #FFC000; margin-left: 10px;"></i> حساب وزارة التعليم العالي والبحث العلمي
+                </div>
+                <div class="topbar-actions">
+                    <div class="notification-icon">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge" style="background: #FFC000; color: black;">1</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="https://ui-avatars.com/api/?name=وزارة+التعليم&background=FFC000&color=006233" alt="User">
+                        <span>مدير الأرشيف بالوزارة</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-wrapper">
+                <div class="welcome-banner">
+                    <div class="welcome-text">
+                        <h1>بوابة الإيداع الإلكتروني للأرشيف</h1>
+                        <p>تتيح لكم هذه البوابة رفع طلبات الدفع الإلزامي (المرسوم 22.070) ومتابعة حالتها لدى المندوبية العامة بشكل آمن وموثق.</p>
+                    </div>
+                    <a href="transfer-form.html" class="btn-primary" style="background: #006233; color: white;"><i class="fas fa-plus"></i> إنشاء طلب تحويل جديد</a>
+                </div>
+
+                <!-- Stats Cards for Agency -->
+                <div class="stats-cards">
+                    <div class="card stat-card" style="border-top: 3px solid #3b82f6;">
+                        <div class="stat-icon" style="background: #eff6ff; color: #3b82f6;"><i class="fas fa-spinner"></i></div>
+                        <div class="stat-info">
+                            <p>طلبات قيد المراجعة</p>
+                            <h3>2</h3>
+                        </div>
+                    </div>
+                    <div class="card stat-card" style="border-top: 3px solid #10b981;">
+                        <div class="stat-icon" style="background: #ecfdf5; color: #10b981;"><i class="fas fa-check-double"></i></div>
+                        <div class="stat-info">
+                            <p>طلبات مقبولة (تم التسليم)</p>
+                            <h3>14</h3>
+                        </div>
+                    </div>
+                    <div class="card stat-card" style="border-top: 3px solid #8b5cf6;">
+                        <div class="stat-icon" style="background: #f3e8ff; color: #8b5cf6;"><i class="fas fa-boxes"></i></div>
+                        <div class="stat-info">
+                            <p>إجمالي العلب المودعة</p>
+                            <h3>1,420 علبة</h3>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Transfer Requests Table -->
+                <div class="card table-card">
+                    <div class="card-header">
+                        <h3>سجل طلبات التحويل الخاص بالوزارة</h3>
+                    </div>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>رقم الطلب</th>
+                                    <th>تاريخ التقديم</th>
+                                    <th>نوع الأرشيف</th>
+                                    <th>الكمية / الحجم</th>
+                                    <th>حالة الطلب</th>
+                                    <th>ملاحظات المندوبية</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#TR-26-004</td>
+                                    <td>05 أكتوبر 2026</td>
+                                    <td>أرشيف تاريخي (أقدم من 10 سنوات)</td>
+                                    <td>120 علبة</td>
+                                    <td><span class="status status-processing">قيد المراجعة</span></td>
+                                    <td>بانتظار تدقيق لجان الفرز ميدانياً.</td>
+                                </tr>
+                                <tr>
+                                    <td>#TR-26-003</td>
+                                    <td>12 مايو 2026</td>
+                                    <td>أرشيف وسيط</td>
+                                    <td>50 علبة</td>
+                                    <td><span class="status status-archived">تم التسليم والاستلام</span></td>
+                                    <td>تم إيداعها بالمستودع الوسيط. رقم المحضر (882).</td>
+                                </tr>
+                                <tr>
+                                    <td>#TR-25-019</td>
+                                    <td>20 نوفمبر 2025</td>
+                                    <td>أرشيف تاريخي</td>
+                                    <td>300 علبة</td>
+                                    <td><span class="status status-archived">تم التسليم والاستلام</span></td>
+                                    <td>مكتمل.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Floating Back Button -->
+    <a href='javascript:history.back()' class='floating-back-btn' title='عودة / Back'>
+        <i class='fas fa-arrow-right rtl-arrow'></i>
+    </a>
+
+</body>
+</html>

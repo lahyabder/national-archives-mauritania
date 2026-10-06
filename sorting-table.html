@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جدول الفرز والإتلاف النموذجي</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background: var(--c-parchment); }
+        .table-container { max-width: 1000px; margin: 50px auto; background: white; padding: 40px; border-radius: 8px; box-shadow: var(--shadow-float); }
+        .table-header { text-align: center; margin-bottom: 30px; }
+        .table-header h2 { font-family: var(--f-serif); color: var(--c-green-dark); }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; font-family: var(--f-sans); }
+        th, td { border: 1px solid var(--c-border); padding: 15px; text-align: center; }
+        th { background: var(--c-green-dark); color: white; font-weight: 600; font-family: var(--f-ui); }
+        tr:nth-child(even) { background: #f9f9f9; }
+        .fate-keep { color: var(--c-green-main); font-weight: bold; background: #e8f5e9; padding: 5px 10px; border-radius: 4px; display: inline-block;}
+        .fate-destroy { color: #e74c3c; font-weight: bold; background: #fdebd0; padding: 5px 10px; border-radius: 4px; display: inline-block;}
+        .fate-sort { color: var(--c-gold); font-weight: bold; background: #fef9e7; padding: 5px 10px; border-radius: 4px; display: inline-block;}
+    </style>
+</head>
+<body>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.jpg" alt="Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>المندوبية العامة للوثائق الوطنية</h1>
+                    <span class="brand-subtitle">الجمهورية الإسلامية الموريتانية</span>
+                </div>
+            </a>
+            <div class="nav-actions">
+                <a href="agencies.html" class="btn-outline-gold"><i class="fas fa-arrow-right"></i> العودة لصفحة الجهات</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="table-container">
+            <div class="table-header">
+                <h2>جدول الفرز والإتلاف النموذجي (قائمة استرشادية)</h2>
+                <p>يحدد هذا الجدول المدد الزمنية لِحفظ أنواع الوثائق الإدارية والمآل النهائي لها.</p>
+            </div>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>الرقم</th>
+                        <th>نوع الوثيقة / سلسلة الملفات</th>
+                        <th>مدة الحفظ في الإدارة (جاري)</th>
+                        <th>مدة الحفظ في المستودع (وسيط)</th>
+                        <th>المآل النهائي (بعد انقضاء المدة)</th>
+                        <th>ملاحظات</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>المراسلات الإدارية العادية (صادر ووارد)</td>
+                        <td>سنتان (2)</td>
+                        <td>3 سنوات</td>
+                        <td><span class="fate-destroy">إتلاف</span></td>
+                        <td>بعد الحصول على موافقة الأرشيف الوطني</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>ملفات الصفقات العمومية والمقاولات</td>
+                        <td>5 سنوات</td>
+                        <td>10 سنوات</td>
+                        <td><span class="fate-sort">فرز وانتقاء</span></td>
+                        <td>تحفظ العقود النهائية وتتلف المسودات</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>القرارات والمراسيم والتعميمات الداخلية</td>
+                        <td>دائمة (جاري)</td>
+                        <td>-</td>
+                        <td><span class="fate-keep">حفظ دائم (أرشيف وطني)</span></td>
+                        <td>تكتسب قيمة تاريخية وقانونية فورية</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>ملفات الموظفين (المسار المهني)</td>
+                        <td>طيلة فترة الخدمة</td>
+                        <td>10 سنوات بعد التقاعد/الوفاة</td>
+                        <td><span class="fate-keep">حفظ دائم</span></td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>الميزانيات السنوية وتقارير الرقابة المالية</td>
+                        <td>3 سنوات</td>
+                        <td>7 سنوات</td>
+                        <td><span class="fate-keep">حفظ دائم</span></td>
+                        <td>-</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div style="margin-top: 30px; text-align: left;">
+                <button class="btn-primary" onclick="window.print()"><i class="fas fa-print"></i> طباعة الجدول</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Back Button -->
+    <a href='javascript:history.back()' class='floating-back-btn' title='عودة / Back'>
+        <i class='fas fa-arrow-right rtl-arrow'></i>
+    </a>
+
+</body>
+</html>

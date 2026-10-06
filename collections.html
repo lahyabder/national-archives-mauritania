@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استكشف السجلات - الأرشيف الوطني</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header { background: var(--c-green-dark); color: white; padding: 100px 0 60px; text-align: center; }
+        .page-header h1 { font-family: var(--f-serif); font-size: 3.5rem; color: var(--c-gold); margin-bottom: 1rem; }
+        .grid-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        .record-card { background: white; border: 1px solid var(--c-border); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-subtle); transition: var(--transition); }
+        .record-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-float); }
+        .record-img { height: 200px; background: #e0e0e0; position: relative; }
+        .record-img img { width: 100%; height: 100%; object-fit: cover; }
+        .record-tag { position: absolute; top: 15px; right: 15px; background: var(--c-gold); color: var(--c-green-dark); padding: 5px 10px; font-size: 0.8rem; font-weight: bold; border-radius: 4px; }
+        .record-content { padding: 20px; }
+        .record-content h3 { font-family: var(--f-ui); color: var(--c-green-dark); margin-bottom: 10px; }
+        .record-content p { color: var(--c-text-light); font-size: 0.95rem; margin-bottom: 15px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.jpg" alt="Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>المندوبية العامة للوثائق الوطنية</h1>
+                    <span class="brand-subtitle">الجمهورية الإسلامية الموريتانية</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="virtual-tour.html" class="nav-item" style="color: var(--c-gold); font-weight: bold;"><i class="fas fa-vr-cardboard"></i> جولة افتراضية</a></li>
+                <li><a href="collections.html" class="nav-item">استكشف السجلات</a></li>
+                <li><a href="researchers.html" class="nav-item">للباحثين</a></li>
+                <li><a href="agencies.html" class="nav-item">للجهات الحكومية</a></li>
+                <li><a href="cooperation.html" class="nav-item">التعاون الدولي</a></li>
+                <li><a href="about.html" class="nav-item">عن المؤسسة</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>المجموعات والسجلات</h1>
+            <p>تصفح أكثر من 1.5 مليون وثيقة مرقمنة من تاريخ موريتانيا</p>
+        </div>
+    </header>
+
+    <section class="section bg-parchment">
+        <div class="container">
+            <div class="search-omnibox" style="margin-top: -100px; position: relative; z-index: 10;">
+                <form class="search-form" style="padding: 20px;">
+                    <div class="search-input-group">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" placeholder="ابحث برقم الوثيقة، الكلمة المفتاحية، أو التاريخ...">
+                        <button type="button" class="btn-search">بحث</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="grid-cards">
+                <!-- Mock Data 1 -->
+                <div class="record-card">
+                    <div class="record-img" style="background-image: url('assets/manuscript.jpg'); background-size: cover; background-position: center;">
+                        <span class="record-tag">مخطوطات</span>
+                    </div>
+                    <div class="record-content">
+                        <h3>مجموعة فتاوى علماء شنقيط</h3>
+                        <p>مجموعة نادرة من الفتاوى والمراسلات الفقهية تعود للقرن الثامن عشر.</p>
+                        <a href="record-details.html" class="btn-outline-gold">عرض التفاصيل</a>
+                    </div>
+                </div>
+                <!-- Mock Data 2 -->
+                <div class="record-card">
+                    <div class="record-img" style="background-image: url('assets/4F7DFA75-C51B-4D22-9ADE-12145D1C89C3.jpeg'); background-size: cover; background-position: center;">
+                        <span class="record-tag">وثائق سياسية</span>
+                    </div>
+                    <div class="record-content">
+                        <h3>إعلان استقلال موريتانيا</h3>
+                        <p>الوثائق والمراسيم الرسمية الصادرة في 28 نوفمبر 1960.</p>
+                        <a href="record-details.html" class="btn-outline-gold">عرض التفاصيل</a>
+                    </div>
+                </div>
+                <!-- Mock Data 3 -->
+                <div class="record-card">
+                    <div class="record-img" style="background-image: url('assets/D470E870-D025-4869-8A91-909B28D8262A.jpeg'); background-size: cover; background-position: center;">
+                        <span class="record-tag">خرائط</span>
+                    </div>
+                    <div class="record-content">
+                        <h3>خريطة طرق القوافل التجارية</h3>
+                        <p>خريطة فرنسية قديمة توضح مسارات التجارة عبر الصحراء الكبرى.</p>
+                        <a href="record-details.html" class="btn-outline-gold">عرض التفاصيل</a>
+                    </div>
+                </div>
+                <!-- Mock Data 4 -->
+                <div class="record-card">
+                    <div class="record-img" style="background-image: url('assets/F7B7E864-0769-4C5B-A2B8-F1D6BD413665.jpeg'); background-size: cover; background-position: center;">
+                        <span class="record-tag">أرشيف إداري</span>
+                    </div>
+                    <div class="record-content">
+                        <h3>سجلات التعداد السكاني 1977</h3>
+                        <p>السجلات الإحصائية الأولى للسكان في موريتانيا المستقلة.</p>
+                        <a href="#" class="btn-outline-gold">عرض التفاصيل</a>
+                    </div>
+                </div>
+                <!-- Mock Data 5 -->
+                <div class="record-card">
+                    <div class="record-img" style="background-image: url('assets/4F7DFA75-C51B-4D22-9ADE-12145D1C89C3.jpeg'); background-size: cover; background-position: center;">
+                        <span class="record-tag">معاهدات</span>
+                    </div>
+                    <div class="record-content">
+                        <h3>معاهدات الحدود المشتركة</h3>
+                        <p>نصوص الاتفاقيات الموقعة مع دول الجوار لترسيم الحدود.</p>
+                        <a href="#" class="btn-outline-gold">عرض التفاصيل</a>
+                    </div>
+                </div>
+                <!-- Mock Data 6 -->
+                <div class="record-card">
+                    <div class="record-img" style="background-image: url('assets/images.jpeg'); background-size: cover; background-position: center;">
+                        <span class="record-tag">صور فوتوغرافية</span>
+                    </div>
+                    <div class="record-content">
+                        <h3>بناء العاصمة نواكشوط</h3>
+                        <p>أرشيف مصور لمراحل وضع حجر الأساس وبناء العاصمة.</p>
+                        <a href="#" class="btn-outline-gold">عرض التفاصيل</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <section class="digital-library" style="padding: 80px 0; background: var(--c-parchment);">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 50px;">
+                <h2 style="font-family: var(--f-serif); color: var(--c-green-dark); font-size: 2.5rem;">المكتبة الرقمية والإصدارات</h2>
+                <p style="color: var(--c-text-light); font-size: 1.2rem;">تصفح وحمل أمهات الكتب والأطالس التاريخية</p>
+            </div>
+            <div class="collections-grid">
+                
+                <div class="record-card">
+                    <div class="record-img" style="background-image: url('Couv.JPG'); background-size: cover; background-position: center; height: 300px;">
+                        <span class="record-tag">كتاب شامل</span>
+                    </div>
+                    <div class="record-content">
+                        <h3>كتاب الأرشيف (Livre d'Archives)</h3>
+                        <p>الإصدار الرسمي الضخم الذي يوثق تاريخ الأرشيف الموريتاني ومقتنياته النادرة.</p>
+                        <a href="Livre d'Archives.pdf" class="btn-outline-gold" target="_blank"><i class="fas fa-download"></i> تحميل (PDF)</a>
+                    </div>
+                </div>
+
+                <div class="record-card">
+                    <div class="record-img" style="background-image: url('Maroc.JPG'); background-size: cover; background-position: center; height: 300px;">
+                        <span class="record-tag">أطلس تاريخي</span>
+                    </div>
+                    <div class="record-content">
+                        <h3>أطلس المستعمرات الفرنسية</h3>
+                        <p>نسخة أصلية وممسوحة ضوئياً من الأطلس التاريخي للمستعمرات الفرنسية.</p>
+                        <a href="Atlas_des_colonies_françaises_(IA_gri_33125009313798).pdf" class="btn-outline-gold" target="_blank"><i class="fas fa-download"></i> تحميل (PDF)</a>
+                    </div>
+                </div>
+
+                <div class="record-card">
+                    <div class="record-img" style="background-image: url('assets/manuscript.jpg'); background-size: cover; background-position: center; height: 300px;">
+                        <span class="record-tag">قانون تنظيمي</span>
+                    </div>
+                    <div class="record-content">
+                        <h3>النصوص التشريعية للأرشيف</h3>
+                        <p>النصوص باللغتين العربية والفرنسية المنظمة لعمل المندوبية العامة.</p>
+                        <div style="display: flex; gap: 10px;">
+                            <a href="النص العربي النهائي13 06 2025.docx" class="btn-outline-gold" style="flex: 1; padding: 5px; text-align: center;" download><i class="fas fa-file-word"></i> عربي</a>
+                            <a href="31 05 النص الفرنسي النهائي 2025 (1).docx" class="btn-outline-gold" style="flex: 1; padding: 5px; text-align: center;" download><i class="fas fa-file-word"></i> فرنسي</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Back Button -->
+    <a href='javascript:history.back()' class='floating-back-btn' title='عودة / Back'>
+        <i class='fas fa-arrow-right rtl-arrow'></i>
+    </a>
+
+</body>
+</html>

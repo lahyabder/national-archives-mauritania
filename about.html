@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عن المؤسسة - الأرشيف الوطني</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@300;400;600;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header { background: var(--c-green-dark); color: white; padding: 100px 0 60px; text-align: center; }
+        .page-header h1 { font-family: var(--f-serif); font-size: 3.5rem; color: var(--c-gold); margin-bottom: 1rem; }
+        .about-content { max-width: 900px; margin: 0 auto; background: white; padding: 50px; border-radius: 8px; box-shadow: var(--shadow-subtle); border: 1px solid var(--c-border); margin-top: 40px; }
+        .about-content h2 { font-family: var(--f-serif); color: var(--c-green-dark); margin-bottom: 20px; font-size: 2rem; }
+        .about-content p { color: var(--c-text-main); font-size: 1.1rem; line-height: 2; margin-bottom: 20px; }
+        .directors-list-modern { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; }
+        .director-card { background: var(--c-parchment); padding: 20px; text-align: center; border-radius: 8px; border: 1px solid var(--c-gold); }
+        .director-card i { font-size: 2rem; color: var(--c-green-dark); margin-bottom: 15px; }
+        .director-card h4 { color: var(--c-green-dark); margin-bottom: 5px; }
+        .director-card span { color: var(--c-text-light); font-size: 0.9rem; }
+        .director-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-bottom: 15px; border: 2px solid var(--c-gold); background: white; }
+    </style>
+</head>
+<body>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.jpg" alt="Logo" class="brand-logo">
+                <div class="brand-text">
+                    <h1>المندوبية العامة للوثائق الوطنية</h1>
+                    <span class="brand-subtitle">الجمهورية الإسلامية الموريتانية</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="virtual-tour.html" class="nav-item" style="color: var(--c-gold); font-weight: bold;"><i class="fas fa-vr-cardboard"></i> جولة افتراضية</a></li>
+                <li><a href="collections.html" class="nav-item">استكشف السجلات</a></li>
+                <li><a href="researchers.html" class="nav-item">للباحثين</a></li>
+                <li><a href="agencies.html" class="nav-item">للجهات الحكومية</a></li>
+                <li><a href="cooperation.html" class="nav-item">التعاون الدولي</a></li>
+                <li><a href="about.html" class="nav-item">عن المؤسسة</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>تاريخنا ورسالتنا</h1>
+            <p>المندوبية العامة للوثائق الوطنية، الحافظ الأمين للذاكرة الموريتانية</p>
+        </div>
+    </header>
+
+    <section class="section bg-parchment">
+        <div class="container">
+            <div class="about-content">
+                <h2>نبذة تاريخية</h2>
+                <p>تُعد الأرشيفات الوطنية الموريتانية بمثابة الأرشيف الوطني في موريتانيا. أُسِّسَت في عام 1955 وتضم أكثر من 3000 مجلد. وبحلول عام 2007، كانت تقع في شارع الاستقلال، لتشكل ذاكرة حية لتاريخ البلاد وتطور مؤسساتها.</p>
+                
+                <h2>مهام المندوبية</h2>
+                <p>تعمل المندوبية كجهاز حكومي مختص تحت إشراف الوزارة المكلفة بالأمانة العامة للحكومة. وتتلخص مهامها في جمع وحفظ الوثائق التاريخية، استقبال وصيانة الأرشيف الإداري للوزارات والمؤسسات العمومية، وتوفير المادة الأرشيفية للباحثين والطلاب وعموم المواطنين.</p>
+                
+                <h2>مدراء تعاقبوا على إدارة الصرح</h2>
+                <div class="directors-list-modern">
+                    <div class="director-card">
+                        <i class="fas fa-user-tie"></i>
+                        <h4>محمد ولد كواد</h4>
+                        <span>الفترة: نحو عام 1974</span>
+                    </div>
+                    <div class="director-card">
+                        <img src="assets/إزيد بيه ولد سيدي محمد .jpg" class="director-img" alt="إزيد بيه">
+                        <h4>إزيد بيه ولد سيدي محمد</h4>
+                        <span>الفترة: نحو عام 2007</span>
+                    </div>
+                    <div class="director-card">
+                        <img src="assets/محمد المختار سيدي محمد .jpeg" class="director-img" alt="محمد المختار">
+                        <h4>محمد المختار سيدي محمد</h4>
+                        <span>الفترة: نحو عام 2017</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Back Button -->
+    <a href='javascript:history.back()' class='floating-back-btn' title='عودة / Back'>
+        <i class='fas fa-arrow-right rtl-arrow'></i>
+    </a>
+
+</body>
+</html>
