@@ -382,5 +382,5 @@ html[dir="ltr"] .rtl-arrow {
     html, body { overflow-x: hidden; width: 100vw; position: relative; }
     .container { padding-left: 15px !important; padding-right: 15px !important; width: 100% !important; box-sizing: border-box; }
     .hero-content h2 { font-size: 2rem !important; }
-    .nav-actions { display: none; } /* Hide extra nav actions on mobile to prevent overflow */
+    
 }
